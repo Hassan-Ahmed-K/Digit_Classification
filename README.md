@@ -2,7 +2,7 @@
 
 Ai/ Deep Learning Digit Classification Model 
 Here is the Colab Link
-https://colab.research.google.com/drive/1UHoNFC6OR0vgKEcHSplqkm1QTz-Fi6-v?usp=sharing
+https://colab.research.google.com/drive/1HV7BVnm42IP16mi6IEKB4ay7WAptGIR7?usp=sharing
 
 
 #### Overview
