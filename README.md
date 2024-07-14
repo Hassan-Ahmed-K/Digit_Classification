@@ -23,28 +23,36 @@ The MNIST dataset comprises 70,000 grayscale images of handwritten digits (0-9),
 **Model Summary:**
 
 ```
-Model: "sequential"
 _________________________________________________________________
  Layer (type)                Output Shape              Param #   
 =================================================================
- dense (Dense)               (None, 512)               401920    
+ flatten_4 (Flatten)         (None, 784)               0         
                                                                  
- dense_1 (Dense)             (None, 10)                5130      
+ dense_10 (Dense)            (None, 512)               401920    
+                                                                 
+ dropout_6 (Dropout)         (None, 512)               0         
+                                                                 
+ dense_11 (Dense)            (None, 512)               262656    
+                                                                 
+ dropout_7 (Dropout)         (None, 512)               0         
+                                                                 
+ dense_12 (Dense)            (None, 10)                5130      
                                                                  
 =================================================================
-Total params: 407050 (1.55 MB)
-Trainable params: 407050 (1.55 MB)
+Total params: 669706 (2.55 MB)
+Trainable params: 669706 (2.55 MB)
 Non-trainable params: 0 (0.00 Byte)
+_________________________________________________________________
 ```
 
 **Performance:**
 
-- **Training Accuracy:** 99.99%
-- **Validation Accuracy:** 99.09%
-- **Testing Accuracy:** 98.25%
+- **Training Accuracy:** 97.91%
+- **Validation Accuracy:** 97.72%
+- **Testing Accuracy:** 97.86%
 
-**Training Loss:** 0.0029
-**Validation Loss:** 0.0309
+**Training Loss:** 0.0066
+**Validation Loss:** 0.0813
 
 ##### 2. Convolutional Neural Network (CNN)
 
@@ -92,38 +100,35 @@ Non-trainable params: 0 (0.00 Byte)
 
 **Performance:**
 
-- **Training Accuracy:** 99.31%
-- **Validation Accuracy:** 99.06%
-- **Testing Accuracy:** 99.19%
+- **Training Accuracy:** 99.30%
+- **Validation Accuracy:** 99.00%
+- **Testing Accuracy:** 99.26%
 
-**Training Loss:** 0.0221
-**Validation Loss:** 0.0361
+**Training Loss:** 0.0223
+**Validation Loss:** 0.0353
 
-**F1 Score:** 0.9920007988829117
+**F1 Score:** 0.992595844333099
 
-**Confusion Matrix:**
-
-[[ 975    0    0    0    1    1    1    1    1    0]
- [   0 1132    0    1    0    0    0    2    0    0]
- [   2    0 1024    0    1    0    0    5    0    0]
- [   0    0    1 1000    0    6    0    1    2    0]
- [   0    0    0    0  979    0    0    1    0    2]
- [   1    0    0    5    0  881    2    1    1    1]
- [   3    2    0    0    3    4  945    0    1    0]
- [   0    1    1    2    0    0    0 1021    1    2]
- [   3    0    2    1    0    1    0    2  963    2]
- [   1    1    0    0    3    3    0    0    1 1000]]
- 
-**Classification Report:**
-
+Confusion Matrix:
+[[ 975    1    0    0    0    0    2    1    1    0]
+ [   0 1133    1    1    0    0    0    0    0    0]
+ [   0    0 1030    0    1    0    0    1    0    0]
+ [   0    0    1 1004    0    4    0    0    1    0]
+ [   0    0    0    0  981    0    0    0    0    1]
+ [   2    0    0    6    0  880    1    1    1    1]
+ [   2    2    0    0    3    4  947    0    0    0]
+ [   0    3    5    0    0    0    0 1016    1    3]
+ [   2    0    1    2    0    0    0    2  965    2]
+ [   1    1    0    0    5    4    0    2    1  995]]
+Classification Report:
               precision    recall  f1-score   support
 
            0       0.99      0.99      0.99       980
-           1       1.00      1.00      1.00      1135
-           2       1.00      0.99      0.99      1032
+           1       0.99      1.00      1.00      1135
+           2       0.99      1.00      1.00      1032
            3       0.99      0.99      0.99      1010
            4       0.99      1.00      0.99       982
-           5       0.98      0.99      0.99       892
+           5       0.99      0.99      0.99       892
            6       1.00      0.99      0.99       958
            7       0.99      0.99      0.99      1028
            8       0.99      0.99      0.99       974
